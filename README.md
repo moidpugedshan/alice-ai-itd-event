@@ -35,6 +35,7 @@
 ## Структура репозитория
 
 ```
+index.html                   точка входа для GitHub Pages (ведёт на waste-paper.html)
 waste-paper.html             СОБРАННЫЙ файл: открывается двойным кликом
 src/index.html               РАЗОБРАННАЯ версия: разметка + ссылки на файлы
 src/js/mock-runtime.js       мок-сервер с комментариями (API, сокет, данные)
@@ -44,6 +45,14 @@ src/styles/app.css           стили (как в сборке)
 src/styles/app.pretty.css    они же, отформатированные для чтения
 scripts/build.py             сборка waste-paper.html из src/
 ```
+
+## Смотреть онлайн
+
+Опубликовано через GitHub Pages — открывается в браузере, без установки:
+
+**https://moidpugedshan.github.io/alice-ai-itd-event/**
+
+(корень ведёт на `waste-paper.html` — сам ивент)
 
 ## Как запускать
 
