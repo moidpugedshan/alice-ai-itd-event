@@ -7,8 +7,8 @@
     js/app.js           -> <script type="module" crossorigin>…</script>
     styles/app.css      -> <style rel="stylesheet" crossorigin>…</style>
 
-Результат: dist/waste-paper.html — один самодостаточный файл, который
-открывается в браузере двойным кликом, без сервера и интернета.
+Результат: waste-paper.html в корне проекта — один самодостаточный файл,
+который открывается в браузере двойным кликом, без сервера и интернета.
 
 Запуск:
     python3 scripts/build.py
@@ -18,8 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-DIST = ROOT / "dist"
-OUT = DIST / "waste-paper.html"
+OUT = ROOT / "waste-paper.html"
 
 # Обрамление блоков — как в собранном файле
 SLOTS = [
@@ -53,7 +52,6 @@ def main() -> None:
         code = code[:-1]
         html = html.replace(placeholder, template.format(code), 1)
 
-    DIST.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     print(f"собрано: {OUT.relative_to(ROOT)} ({OUT.stat().st_size} байт)")
 

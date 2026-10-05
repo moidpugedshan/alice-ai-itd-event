@@ -24,7 +24,7 @@
 
 ## Что внутри собранного файла
 
-`dist/waste-paper.html` — один самодостаточный файл (~6,7 МБ):
+`waste-paper.html` (в корне проекта) — один самодостаточный файл (~6,7 МБ):
 
 * разметка: пустой `<div id="root">` (приложение монтируется скриптом);
 * `mock-runtime` — мок-сервер: подменяет API и WebSocket;
@@ -35,14 +35,14 @@
 ## Структура репозитория
 
 ```
-dist/waste-paper.html        собранный файл: открывается двойным кликом
-src/index.html               разобранная версия: разметка + ссылки на файлы
+waste-paper.html             СОБРАННЫЙ файл: открывается двойным кликом
+src/index.html               РАЗОБРАННАЯ версия: разметка + ссылки на файлы
 src/js/mock-runtime.js       мок-сервер с комментариями (API, сокет, данные)
 src/js/app.js                бандл приложения (как в сборке)
 src/js/app.pretty.js         он же, отформатированный для чтения (в сборку не входит)
 src/styles/app.css           стили (как в сборке)
 src/styles/app.pretty.css    они же, отформатированные для чтения
-scripts/build.py             сборка dist/ из src/
+scripts/build.py             сборка waste-paper.html из src/
 ```
 
 ## Как запускать
@@ -50,7 +50,7 @@ scripts/build.py             сборка dist/ из src/
 **Собранный файл** — просто открыть в браузере:
 
 ```
-dist/waste-paper.html
+waste-paper.html
 ```
 
 **Разобранная версия** — нужен локальный сервер (браузер не даёт грузить ES-модули
@@ -65,7 +65,7 @@ python3 -m http.server 8000
 ## Сборка
 
 ```bash
-python3 scripts/build.py        # соберёт dist/waste-paper.html из src/
+python3 scripts/build.py        # соберёт waste-paper.html из src/
 ```
 
 Сборщик подставляет содержимое `src/js/*` и `src/styles/*` в разметку
@@ -73,7 +73,8 @@ python3 scripts/build.py        # соберёт dist/waste-paper.html из src/
 собранным файлом — проверить можно так:
 
 ```bash
-sha256sum dist/waste-paper.html
+sha256sum waste-paper.html
+# ожидается 6b126847191b10979b86fb794268044104abb6d4e77fd73e60d6eb68bab5e93a
 ```
 
 ## Настройка состояния (мок-данные)
